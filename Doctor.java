@@ -1,7 +1,9 @@
+import java.util.*;
+
 public class Doctor 
 {
 	private String name; 	// the name of the doctor
-	private String specialisation; 	// the specialisation of the doctor (it can be â€œdogâ€ or â€œcatâ€)
+	private String specialisation; 	// the specialisation of the doctor (it can be dog or cat)
 	
 	// add comments
 	public void setName(String name)
@@ -12,6 +14,16 @@ public class Doctor
 	public String getName()
 	{
 		return name;
+	}
+	
+	public void setSpecialisation(String specialisation)
+	{
+		this.specialisation = specialisation;
+	}
+	
+	public String getSpecialisation()
+	{
+		return specialisation;
 	}
 	// complete all other methods from here.
 }
