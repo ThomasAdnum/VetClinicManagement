@@ -31,10 +31,10 @@ classes. */
 
     }
 
-    public void run() { 
+    public void run() {
         int option;
-        String addDoctor, addPet, deleteDoctor, deletePet, listDoctor, 
-        listPet, assignedPet, assignDoctor, analysePet; // initialises Strings that will be used for the menu and functionalities 
+        String addDoctor, addPet, deleteDoctor, deletePet, listDoctor,
+                listPet, assignedPet, assignDoctor, analysePet; // initialises Strings that will be used for the menu and functionalities
 
         do {
             System.out.println( //this menu will be printed as soon as the program is opened. The user will input the corresponding number with their option.
@@ -42,47 +42,47 @@ classes. */
             option = console.nextInt();
             console.nextLine();
             switch (option) { //switch loop is used to allow the user to choose and option and when they are finished, it returns them to the menu to choose their next option.
-            case 1:
-                addDoctor();
-                addDoctor(); //function allows two doctors to be input
-                break;
+                case 1:
+                    addDoctor();
+                    addDoctor(); //function allows two doctors to be input
+                    break;
 
-            case 2:
-                addPet(); //function allows up to 4 pets to be input
-                break;
+                case 2:
+                    addPet(); //function allows up to 4 pets to be input
+                    break;
 
-            case 3:
-                deleteDoctor();//function allows any of the 2 doctors to be deleted from the system
-                break;
+                case 3:
+                    deleteDoctor();//function allows any of the 2 doctors to be deleted from the system
+                    break;
 
-            case 4:
-                deletePet();//function alows any of the 4 pets to be deleted from the system
-                break;
+                case 4:
+                    deletePet();//function alows any of the 4 pets to be deleted from the system
+                    break;
 
-            case 5:
-                listDoctor();//function displays a list of doctors in the system
-                break;
+                case 5:
+                    listDoctor();//function displays a list of doctors in the system
+                    break;
 
-            case 6:
-                listPet();//function displays a list of Pets in the system
-                break;
+                case 6:
+                    listPet();//function displays a list of Pets in the system
+                    break;
 
-            case 7:
-                listAssignedPets();//function displays a list of pets that have been assigned to a doctor
-                break;
+                case 7:
+                    listAssignedPets();//function displays a list of pets that have been assigned to a doctor
+                    break;
 
-            /*case 8:
-                assignDoctor();//function allows for pets to be assigned to a doctor
-                break;
+                case 8:
+                    assignDoctor();//function allows for pets to be assigned to a doctor
+                    break;
 
-            case 9:
-                analysePet();//function allows user to analyse their pet
-                break;*/
+                case 9:
+                    analysePet();//function allows user to analyse their pet
+                    break;
 
-            case 10:
-                break;//option 10 will break the loop and exit the menu
-            default:
-                System.out.println("invalid option");//if the wrong number is entered, it will display as an error
+                case 10:
+                    break;//option 10 will break the loop and exit the menu
+                default:
+                    System.out.println("invalid option");//if the wrong number is entered, it will display as an error
 
             }
         } while (option != 10);
@@ -168,25 +168,25 @@ classes. */
             console.nextLine();
 
             switch (i) {
-            case 1:
-                pet1 = new Pet();
-                pet1.setData(newName, newType, newSize, newAge, newWeight);
-                break;
+                case 1:
+                    pet1 = new Pet();
+                    pet1.setData(newName, newType, newSize, newAge, newWeight);
+                    break;
 
-            case 2:
-                pet2 = new Pet();
-                pet2.setData(newName, newType, newSize, newAge, newWeight);
-                break;
+                case 2:
+                    pet2 = new Pet();
+                    pet2.setData(newName, newType, newSize, newAge, newWeight);
+                    break;
 
-            case 3:
-                pet3 = new Pet();
-                pet3.setData(newName, newType, newSize, newAge, newWeight);
-                break;
+                case 3:
+                    pet3 = new Pet();
+                    pet3.setData(newName, newType, newSize, newAge, newWeight);
+                    break;
 
-            case 4:
-                pet4 = new Pet();
-                pet4.setData(newName, newType, newSize, newAge, newWeight);
-                break;
+                case 4:
+                    pet4 = new Pet();
+                    pet4.setData(newName, newType, newSize, newAge, newWeight);
+                    break;
             }
         }
     }
@@ -315,7 +315,7 @@ classes. */
             if(petList.length() > 0) {
                 petList += ", ";
             }
-            
+
         }
         if (doctorName.equals(pet4.getName())) {
             if(petList.length() > 0) {
@@ -337,7 +337,7 @@ classes. */
         }
 
 
-       
+
     }
 
 
@@ -355,8 +355,8 @@ classes. */
         if(!petName.equals(pet1.getName()) || !petName.equals(pet2.getName())|| !petName.equals(pet3.getName())|| !petName.equals(pet4.getName())){
             System.out.println("Pet does not exist.");
         }
-       
-        Pet petRef; 
+
+        Pet petRef;
         Doctor docRef;
 
         switch (petName) {
@@ -380,18 +380,19 @@ classes. */
         switch (doctorName) {
             case doctor1.getName():
                 docRef = doctor1;
-            break;
+                break;
             case doctor2.getName():
                 docRef = doctor2;
-            break;
+                break;
 
             default:
-            break;
+                break;
 
         }
 
         //similar reference for doctor
         if(petRef.getDoctor() != null){
+            String confirm;
             if (petRef.getDoctor().equalsIgnoreCase(doctorName)) {
                 System.out.println("Already assigned to this doctor");
             }
@@ -404,8 +405,6 @@ classes. */
         if (petRef.getSpecialisation().equalsIgnoreCase(doctor1.getSpecialisation()) || petRef.getSpecialisation().equalsIgnoreCase(doctor2.getSpecialisation())) {
             System.out.println("Doctor has the wrong specialisation for this Pet.");
         }
-        
-
     }
 
     public void analysePet() {
@@ -413,8 +412,9 @@ classes. */
         System.out.println("Enter name of pet: ");
         petName = console.nextLine();
 // check if doctor and pet exist
-//         
-        Pet petRef; 
+//
+        Pet petRef = new Pet();
+        /*
         switch (petName) {
             case pet1.getName():
                 petRef = pet1;
@@ -429,8 +429,39 @@ classes. */
                 petRef = pet4;
                 break;
             default:
+
                 break;
         }
+        */
+        if(pet1 != null){
+
+        }
+        if(pet2 != null){
+
+        }
+        if(petName.equalsIgnoreCase(pet1.getName())){
+            petRef = pet1;
+        } else if(petName.equalsIgnoreCase(pet2.getName())){
+            petRef = pet2;
+        } else if(petName.equalsIgnoreCase(pet3.getName())){
+            petRef = pet3;
+        } else if(petName.equalsIgnoreCase(pet4.getName())){
+            petRef = pet4;
+        } else {
+            System.out.println("That pet does not exist");
+            
+        }
+
+        if(petRef.getType().equalsIgnoreCase("cat")){
+            if(petRef.getSize().equalsIgnoreCase("s") && petRef.getWeight() > 4 || (petRef.getSize().equalsIgnoreCase("m") && petRef.getWeight() > 6 || (petRef.getSize().equalsIgnoreCase("l") && petRef.getWeight() > 8))){
+                System.out.println("Your cat is fat");
+            }
+        }else if(petRef.getType().equalsIgnoreCase("dog")){
+            if(petRef.getSize().equalsIgnoreCase("s") && petRef.getWeight() > 6 || (petRef.getSize().equalsIgnoreCase("m") && petRef.getWeight() > 9 || (petRef.getSize().equalsIgnoreCase("l") && petRef.getWeight() > 12))){
+                System.out.println("Your dog is fat");
+            }
+        }
+
 
     }
 
